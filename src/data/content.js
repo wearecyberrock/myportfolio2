@@ -29,11 +29,11 @@ export const projects = [
   },
   {
     id: "cyberrock",
-    title: "Cyberrock",
-    description: "Tech & cybersecurity brand pushing the boundaries of digital protection.",
-    image: null, // TODO: Add image path
+    title: "Cyberrock — Creative Technology Lab",
+    description: "Creative technology lab focused on innovation, cybersecurity, and digital experiences.",
+    image: "/assets/cyberrock.jpeg",
     aspectRatio: "16:9",
-    link: "#", // TODO: Add project link
+    link: "https://itscyberrock.framer.website/",
     tags: ["Tech", "Cybersecurity", "Branding"],
   },
   {
@@ -153,15 +153,25 @@ export const achievements = [
 export const social = {
   instagram: "https://www.instagram.com/itsshakyuhzmi/?__pwa=1",
   tiktok: "https://www.tiktok.com/@itsshaksar7?is_from_webapp=1&sender_device=pc",
-  email: "hello@example.com", // TODO: Replace with your email
+  email: "dihouseofrah@gmail.com",
   cvPath: "/assets/cv.pdf", // TODO: Place your CV at public/assets/cv.pdf
 };
 
 export const downloads = {
-  heading: "Downloads",
-  description: "Access additional resources and files.",
-  link: "https://example.com/downloads", // TODO: Replace with your downloads page URL
-  linkText: "Go to Downloads",
+  heading: "Resume",
+  description: "Looking for my resume? You can download it here.",
+  resume: {
+    link: "/assets/ShakirRussellResume.pdf",
+    text: "Download Resume",
+  },
+  coverLetter: {
+    link: "/assets/ShakirRussell_CoverLetter_Template.pdf",
+    text: "Download Cover Letter",
+  },
+  cv: {
+    link: "/assets/cv.pdf",
+    text: "Download CV",
+  },
 };
 
 export const navLinks = [

@@ -5,6 +5,7 @@ import About from "./components/sections/About";
 import Downloads from "./components/sections/Downloads";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
+import ScrollProgressBar from "./components/ui/ScrollProgressBar";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollProgressBar />
     </div>
   );
 }

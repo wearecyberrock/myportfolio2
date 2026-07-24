@@ -155,6 +155,7 @@
   transition: background-color 0.3s ease;
 }
 
+
 /* Hover state on the parent card affects the inner container */
 .placeholder-card:hover .placeholder-inner {
   background-color: rgba(196, 30, 58, 0.10); /* hover:bg-accent/10 */
