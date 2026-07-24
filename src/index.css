@@ -392,6 +392,10 @@ body {
   box-shadow: var(--shadow-card);
 }
 
+/* Note: Many className utility tokens used in JSX (e.g. `text-text-secondary`, `bg-accent`) are
+  implemented with CSS variables and semantic rules below. To change color usage across the app,
+  edit the variables in `:root` at the top of this file, or adjust these semantic classes. */
+
 .glass-hover {
   transition: all var(--transition-base);
 }
@@ -824,3 +828,42 @@ body {
     padding: 1.25rem;
   }
 }
+
+/* Floating movable scroll progress widget */
+.floating-progress {
+  position: fixed;
+  z-index: 60;
+  width: 220px;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  cursor: grab;
+  user-select: none;
+}
+.floating-progress:active { cursor: grabbing; }
+
+.floating-progress-track {
+  height: 8px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 999px;
+  overflow: hidden;
+  flex: 1 1 100px;
+}
+.floating-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #c04a5b);
+  width: 0%;
+  transition: width 0.12s linear;
+}
+
+.floating-progress-label {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+

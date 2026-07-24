@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Button = ({ children, variant = 'primary', href, onClick, className = '', icon, ...rest }) => {
+  // `base` collects common utility classes applied to every button variant.
+  // Examples: `inline-flex` (display), `w-max` (width: max-content),
+  // `items-center` and `justify-center` align the inner content.
   const base = 'inline-flex w-max items-center justify-center font-medium transition-all focus:outline-none focus:ring-2 focus:ring-accent/30 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap';
   
+  // `variants` maps a semantic variant name to a string of utility classes.
+  // Edit these class strings to change spacing, color, or behavior across the app.
   const variants = {
     primary: 'bg-accent text-white px-8 py-3 rounded-xl min-w-[200px] hover:bg-accent-hover hover:shadow-[0_4px_24px_rgba(196,30,58,0.35)] active:shadow-[0_2px_12px_rgba(196,30,58,0.3)] font-semibold text-sm tracking-wide',
     secondary: 'bg-transparent border border-accent/30 text-accent px-8 py-3 rounded-xl min-w-[200px] hover:bg-accent-muted hover:border-accent/50 font-semibold text-sm tracking-wide',
@@ -12,6 +17,7 @@ const Button = ({ children, variant = 'primary', href, onClick, className = '', 
 
   const classes = `${base} ${variants[variant] || variants.primary} ${className}`;
 
+  // `Inner` renders optional icon + children. `icon` is an inline SVG or node.
   const Inner = () => (
     <>
       {icon && <span className={children ? "mr-2" : ""}>{icon}</span>}
