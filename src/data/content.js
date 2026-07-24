@@ -143,7 +143,8 @@ export const achievements = [
 ];
 
 export const social = {
-  instagram: "https://instagram.com/yourusername", // TODO: Replace with your Instagram URL
+  instagram: "https://www.instagram.com/itsshakyuhzmi/?__pwa=1",
+  tiktok: "https://www.tiktok.com/@itsshaksar7?is_from_webapp=1&sender_device=pc",
   email: "hello@example.com", // TODO: Replace with your email
   cvPath: "/assets/cv.pdf", // TODO: Place your CV at public/assets/cv.pdf
 };
