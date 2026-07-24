@@ -1,0 +1,312 @@
+/* 
+==========================================================================
+   ABOUT SECTION STYLES
+   This file replaces Tailwind utility classes with standard CSS to make
+   the layout logic easier to read and understand.
+==========================================================================
+*/
+
+/* 
+  1. MAIN BENTO GRID LAYOUT
+  We use CSS Grid to create a responsive layout that changes the number
+  of columns based on the screen width.
+*/
+.about-grid {
+  display: grid;
+  gap: 1.25rem; /* Equivalent to Tailwind gap-5 */
+  /* Mobile default: 1 column */
+  grid-template-columns: repeat(1, minmax(0, 1fr)); 
+}
+
+/* Adds margin to the bottom of the first grid to separate it from the second */
+.about-grid-margin {
+  margin-bottom: 1.25rem; /* mb-5 */
+}
+
+/* Tablet (md): 2 columns */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop (lg): 3 columns */
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* 
+  2. GRID SPANNING (PICTURE BENTO GRID)
+  These classes determine how many rows or columns a specific card takes up.
+*/
+
+/* Full Body Card: Spans 2 rows on tablet, 1 col on desktop */
+.grid-pic-full-body {
+  /* Default: spans 1 col, 1 row */
+}
+@media (min-width: 768px) {
+  .grid-pic-full-body {
+    grid-row: span 2 / span 2;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-pic-full-body {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* Portrait & Creative Cards: Take up 1 column on desktop */
+.grid-pic-square {
+}
+@media (min-width: 1024px) {
+  .grid-pic-square {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* Landscape Card: Spans 2 columns on tablet and desktop */
+.grid-pic-landscape {
+}
+@media (min-width: 768px) {
+  .grid-pic-landscape {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* 
+  3. GRID SPANNING (CONTENT BENTO GRID)
+*/
+
+/* Skills & Education: Spans 2 columns on desktop */
+.grid-content-wide {
+}
+@media (min-width: 1024px) {
+  .grid-content-wide {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* Hobbies & Achievements: Spans 1 column on desktop */
+.grid-content-narrow {
+}
+@media (min-width: 1024px) {
+  .grid-content-narrow {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* 
+  4. PICTURE PLACEHOLDER CARD STYLING
+  Replaces utility classes like: h-full aspect-square !p-0 overflow-hidden relative group
+*/
+
+.placeholder-card {
+  height: 100%;
+  padding: 0 !important; /* Overrides default BentoCard padding */
+  overflow: hidden;
+  position: relative;
+}
+
+/* specific sizing constraints */
+.placeholder-card.vertical {
+  min-height: 400px;
+}
+.placeholder-card.horizontal {
+  min-height: 200px;
+}
+.placeholder-card.square {
+  aspect-ratio: 1 / 1;
+}
+@media (min-width: 768px) {
+  .placeholder-card.square {
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+}
+
+/* The dotted inner container */
+.placeholder-inner {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; /* inset-0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  
+  /* Styling the border and background */
+  border: 2px dashed var(--border);
+  background-color: rgba(196, 30, 58, 0.05); /* bg-accent/5 using standard accent color */
+  border-radius: inherit; /* Matches parent card radius */
+  margin: 0.5rem; /* m-2 */
+  
+  /* Smooth transition for hover effects */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state on the parent card affects the inner container */
+.placeholder-card:hover .placeholder-inner {
+  background-color: rgba(196, 30, 58, 0.10); /* hover:bg-accent/10 */
+}
+
+/* Icon inside the placeholder */
+.placeholder-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+  opacity: 0.5;
+}
+
+/* Text styles inside the placeholder */
+.placeholder-title {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.875rem; /* text-sm */
+}
+.placeholder-subtitle {
+  color: var(--text-tertiary);
+  font-size: 0.75rem; /* text-xs */
+  margin-top: 0.25rem;
+}
+
+/* 
+  5. CONTENT SPACING & TYPOGRAPHY
+*/
+
+/* Space between skills categories */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+/* The small category title (e.g. "Creative", "Technical & Soft") */
+.category-title {
+  color: var(--text-tertiary);
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.75rem; /* mb-3 */
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-widest */
+}
+
+/* Container for the skill pills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+}
+
+/* Grid layout specifically for the hobbies inside the BentoCard */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid-cols-2 */
+  gap: 0.75rem; /* gap-3 */
+}
+
+/* Gap for education items */
+.edu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* space-y-1 */
+}
+
+/* Grid for the subjects inside an education accordion */
+.edu-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+  gap: 0.625rem; /* gap-2.5 */
+  margin-top: 0.75rem; /* mt-3 */
+}
+@media (min-width: 640px) { /* sm */
+  .edu-subjects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* sm:grid-cols-2 */
+  }
+}
+
+/* Individual subject item styling */
+.edu-subject-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* gap-2 */
+  background: rgba(255, 255, 255, 0.6); /* bg-white/60 */
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  border: 1px solid var(--border);
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: all 0.2s ease; /* transition-all duration-200 */
+}
+.edu-subject-item:hover {
+  background: rgba(255, 255, 255, 0.8); /* hover:bg-white/80 */
+  border-color: var(--border-hover); /* hover:border-border-hover */
+}
+
+/* Subject name text */
+.edu-subject-name {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-primary);
+  font-weight: 500; /* font-medium */
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* truncate */
+}
+
+/* Grade badge */
+.edu-grade-badge {
+  padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
+  flex-shrink: 0;
+}
+
+/* Fallback text when no subjects exist */
+.edu-description {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-secondary);
+  margin-top: 0.75rem; /* mt-3 */
+  line-height: 1.625; /* leading-relaxed */
+}
+
+/* Achievements list spacing */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem; /* space-y-3.5 */
+}
+
+/* Individual achievement layout */
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Red dot next to achievement */
+.achievement-dot {
+  width: 0.375rem; /* w-1.5 */
+  height: 0.375rem; /* h-1.5 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: var(--accent); /* bg-accent */
+  margin-top: 0.5rem; /* mt-2 */
+  margin-right: 0.75rem; /* mr-3 */
+  flex-shrink: 0;
+  transition: transform 0.3s ease; /* transition-transform duration-300 */
+}
+
+/* Hover effect from the parent group */
+.achievement-item:hover .achievement-dot {
+  transform: scale(1.5); /* group-hover/ach:scale-150 */
+}
+
+/* Achievement text */
+.achievement-text {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-secondary);
+  line-height: 1.625; /* leading-relaxed */
+}

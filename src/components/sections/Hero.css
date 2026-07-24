@@ -1,0 +1,133 @@
+/* Hero Component Styles */
+
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Fallback */
+  height: 100svh; /* Modern mobile browsers */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Particle Container */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.hero-cards-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1.5rem;
+  /* 3D perspective for child cards */
+  perspective: 1200px;
+}
+
+@media (min-width: 768px) {
+  .hero-cards-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.hero-card {
+  flex: 1;
+  min-height: 300px;
+  background-color: var(--bg-card, rgba(255, 255, 255, 0.55));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  border-radius: var(--radius-card, 20px);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-elevated, 0 8px 32px rgba(0, 0, 0, 0.08));
+  
+  /* Initial hidden state for the animation */
+  opacity: 0;
+  
+  /* 3D Transform setup */
+  transform-style: preserve-3d;
+  /* Start rotated 90deg on Y axis, pushed slightly back */
+  transform: rotateY(90deg) translateZ(-100px); 
+}
+
+/* Empty placeholder text for cards */
+.hero-card-placeholder {
+  color: var(--text-tertiary, #87817A);
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+/* Typography and Spacing Updates */
+.hero-tagline {
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 12vw, 3.75rem);
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    font-size: 8rem;
+  }
+}
+
+/* Scroll Indicator Positioning */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
