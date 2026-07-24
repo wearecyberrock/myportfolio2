@@ -29,13 +29,11 @@ const About = () => {
         {/* Portrait (Square) */}
         <ScrollReveal delay={0.2} className="grid-pic-square">
           <BentoCard className="placeholder-card square">
-            <div className="placeholder-inner">
-              <svg className="placeholder-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span className="placeholder-title">Portrait</span>
-              <span className="placeholder-subtitle">Square Placeholder</span>
-            </div>
+            <img
+              src="/assets/portrait.jpeg"
+              alt="Portrait"
+              className="portrait-image"
+            />
           </BentoCard>
         </ScrollReveal>
 
