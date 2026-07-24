@@ -8,7 +8,7 @@
 export const siteConfig = {
   name: "Shakir Russell",
   title: "Creative Developer & Designer",
-  logo: "SR",
+  logo: "itsSHAK",
 };
 
 export const hero = {
@@ -85,6 +85,14 @@ export const hobbies = [
   { name: "Music", icon: "🎵" },
   { name: "Philosophy", icon: "📖" },
 ];
+
+export const interestingFacts = {
+  "Favourite Colour": "Red",
+  "Religion": "Christianity",
+  "Age": "19",
+  "Favourite Show": "Peaky Blinders",
+  "Favourite Sport": "Football",
+};
 
 export const education = [
   {

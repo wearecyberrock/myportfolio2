@@ -3,7 +3,7 @@ import SectionHeading from '../ui/SectionHeading';
 import BentoCard from '../ui/BentoCard';
 import ScrollReveal from '../ui/ScrollReveal';
 import Accordion from '../ui/Accordion';
-import { skills, hobbies, education, achievements } from '../../data/content';
+import { skills, hobbies, education, achievements, interestingFacts } from '../../data/content';
 import './About.css';
 
 const About = () => {
@@ -146,6 +146,20 @@ const About = () => {
                 <li key={idx} className="achievement-item group/ach">
                   <span className="achievement-dot" />
                   <span className="achievement-text">{ach}</span>
+                </li>
+              ))}
+            </ul>
+          </BentoCard>
+        </ScrollReveal>
+
+        {/* Interesting Facts Card */}
+        <ScrollReveal delay={0.5} className="grid-content-narrow">
+          <BentoCard title="Interesting Facts About Me" className="h-full">
+            <ul className="flex flex-col gap-3 mt-2">
+              {Object.entries(interestingFacts).map(([key, value], idx) => (
+                <li key={idx} className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center pb-2 border-b border-border/50 last:border-0 last:pb-0">
+                  <span className="text-text-secondary font-medium text-sm">{key}:</span>
+                  <span className="text-text-primary text-sm font-semibold">{value}</span>
                 </li>
               ))}
             </ul>
