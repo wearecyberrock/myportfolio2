@@ -73,15 +73,16 @@ export const ventures = [
     accent: "crimson",
   },
   {
-    id: "yuhzmi",
-    kicker: "FASHION & STREETWEAR",
-    title: "Yuhzmi",
+    id: "dapa",
+    kicker: "FASHION, WATCHES & ACCESSORIES // RAH HOLDINGS",
+    title: "DAPA",
     description:
-      "A contemporary clothing brand blending Caribbean streetwear aesthetics with bold artistic expression and editorial graphic craft.",
-    image: null,
+      "Caribbean-born luxury fashion and timepiece house crafting sharp tailored clothing, signature watches, and modern accessories rooted in Jamaican dappa elegance. (Concept logo placeholder.)",
+    image: "/assets/dapa-logo.svg",
+    containImage: true,
     link: "https://www.instagram.com/itsshakyuhzmi/",
-    cta: "Follow @itsshakyuhzmi",
-    tags: ["Branding", "Fashion", "Graphic Design"],
+    cta: "Follow DAPA Updates",
+    tags: ["Watches", "Fashion", "RAH Holdings", "Logo Placeholder"],
     accent: "rose",
   },
   {
@@ -91,8 +92,8 @@ export const ventures = [
     description:
       "2D, 3D, and Spider-Verse-inspired halftone motion design, manga/comic storytelling, and interactive visual systems.",
     image: null,
-    link: "https://www.tiktok.com/@itsshaksar7",
-    cta: "Watch Motion Work",
+    link: "https://www.tiktok.com/@agentshak.exe?is_from_webapp=1&sender_device=pc",
+    cta: "Watch @agentshak.exe",
     tags: ["Motion", "Animation", "Comics / Manga"],
     accent: "cyan",
   },
@@ -103,10 +104,52 @@ export const ventures = [
     description:
       "Original compositions, sound design, and experimental sonic landscapes bridging emotional storytelling with modern production.",
     image: null,
-    link: "https://www.tiktok.com/@itsshaksar7",
+    link: "https://www.tiktok.com/@agentshak.exe?is_from_webapp=1&sender_device=pc",
     cta: "Explore Audio",
     tags: ["Music", "Sound Design", "Production"],
     accent: "rose",
+  },
+];
+
+export const rulesList = [
+  {
+    num: "RULE 01 // THE BALANCE",
+    title: "50% AI & 50% You",
+    body: "AI brings speed, recall, synthesis, and scale. You bring taste, ethics, originality, lived experience, and final judgment. Real mastery is always half machine precision and half human soul.",
+    tags: ["Human-in-the-Loop", "Craft First"],
+  },
+  {
+    num: "RULE 02 // OWNERSHIP",
+    title: "It Will Only Replace You If You Let It",
+    body: "Automation doesn't erase curious builders — it replaces complacency. Learn the tools, master the fundamentals, own your stack, and stay in the driver's seat of the technology shift.",
+    tags: ["Stay In Command", "Sovereign Tech"],
+  },
+  {
+    num: "RULE 03 // MINDSET",
+    title: "Don't Make Your Brain Divorce You",
+    body: "Never outsource your thinking completely to a prompt box. Read the code, sketch the frame, question the output, verify the facts, and keep your mind sharp alongside your agents.",
+    tags: ["Active Thinking", "Keep Thinking"],
+  },
+];
+
+export const inspirationList = [
+  {
+    num: "INSPIRATION 01 // CINEMA & ART",
+    title: "Spider-Man: Into the Spider-Verse",
+    body: "A masterclass in balancing hand-drawn comic craft (halftone dots, line-hatching, CMYK misregistration, animating on twos) with cutting-edge 3D technology.",
+    tags: ["Halftone Craft", "On Twos (12fps)"],
+  },
+  {
+    num: "INSPIRATION 02 // SCI-FI TO REALITY",
+    title: "Turning Fiction Into Engineering",
+    body: "Building JARVIS-inspired local multi-agent systems (Assimilis OS), dedicated hardware (Cyberrock), and cybersecurity defenses that feel pulled straight out of sci-fi.",
+    tags: ["Agentsar", "Cyberrock"],
+  },
+  {
+    num: "INSPIRATION 03 // CARIBBEAN ROOTS",
+    title: "Jamaica, Open Source & Art",
+    body: "Opening the door of AI, traditional software, cybersecurity, animation, music, and luxury design (DAPA) for Caribbean creators and businesses.",
+    tags: ["Kingston, Jamaica", "RAH Holdings"],
   },
 ];
 
@@ -207,7 +250,7 @@ export const social = {
   agentsar: "https://github.com/wearecyberrock/agentsar",
   cyberrock: "https://itscyberrock.framer.website/",
   instagram: "https://www.instagram.com/itsshakyuhzmi/?__pwa=1",
-  tiktok: "https://www.tiktok.com/@itsshaksar7?is_from_webapp=1&sender_device=pc",
+  tiktok: "https://www.tiktok.com/@agentshak.exe?is_from_webapp=1&sender_device=pc",
   email: "dihouseofrah@gmail.com",
   cvPath: "/assets/cv.pdf",
 };
@@ -231,6 +274,7 @@ export const downloads = {
 
 export const navLinks = [
   { label: "Work", href: "#projects" },
+  { label: "Rules & Inspire", href: "#rules" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "#downloads" },
   { label: "Contact", href: "#contact" },

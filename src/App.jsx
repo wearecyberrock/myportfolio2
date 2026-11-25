@@ -6,8 +6,10 @@ import {
   education,
   hero,
   hobbies,
+  inspirationList,
   interestingFacts,
   navLinks,
+  rulesList,
   siteConfig,
   skills,
   social,
@@ -17,6 +19,7 @@ import {
 export default function App() {
   const [onTwos, setOnTwos] = useState(true);
   const [openEdu, setOpenEdu] = useState(1); // Open Excelsior CXC by default
+  const [rulesTab, setRulesTab] = useState("rules");
 
   return (
     <>
@@ -98,18 +101,23 @@ export default function App() {
                     <div className="v">Cyberrock</div>
                   </div>
                   <div>
-                    <div className="k">Holding Group</div>
-                    <div className="v">{siteConfig.holding}</div>
+                    <div className="k">Fashion &amp; Watches</div>
+                    <div className="v">DAPA</div>
                   </div>
                 </div>
               </div>
 
               <div className="p-portrait-wrap">
                 <figure className="p-portrait-card" style={{ margin: 0 }}>
-                  <img src={siteConfig.portrait} alt="Shakir Russell portrait" />
+                  <div className="p-portrait-media">
+                    <img src={siteConfig.portrait} alt="Shakir Russell placeholder portrait" />
+                    <div className="p-watermark-band" aria-label="Placeholder watermark">
+                      PLACEHOLDER
+                    </div>
+                  </div>
                   <figcaption className="p-portrait-caption">
                     <strong>FIG. 01 // SHAKIR RUSSELL</strong>
-                    <span>KINGSTON, JAMAICA</span>
+                    <span>PHOTO PLACEHOLDER</span>
                   </figcaption>
                 </figure>
               </div>
@@ -117,6 +125,62 @@ export default function App() {
           </section>
 
           <div className="p-halftone-bar" aria-hidden="true" />
+
+          {/* ── RULES & INSPIRATION TABS ─────────────────────────────── */}
+          <section id="rules" className="p-section p-section-alt">
+            <div className="p-container">
+              <div className="p-sec-head">
+                <div>
+                  <div className="p-kicker">CODE OF CONDUCT // RULES &amp; INSPIRATION</div>
+                  <h2 className="p-sec-title">50% AI. 50% You. Stay in command.</h2>
+                </div>
+                <p className="p-sec-desc">
+                  Technology should multiply your thinking, never replace it. Here are the core
+                  rules and inspirations behind everything I build.
+                </p>
+              </div>
+
+              <div className="p-tabs" role="tablist" aria-label="Rules and Inspiration">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={rulesTab === "rules"}
+                  className={`p-tab-btn ${rulesTab === "rules" ? "active" : ""}`}
+                  onClick={() => setRulesTab("rules")}
+                >
+                  01 · The Rules (50/50 Code)
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={rulesTab === "inspiration"}
+                  className={`p-tab-btn ${rulesTab === "inspiration" ? "active" : ""}`}
+                  onClick={() => setRulesTab("inspiration")}
+                >
+                  02 · Inspiration
+                </button>
+              </div>
+
+              <div className="p-rules-grid">
+                {(rulesTab === "rules" ? rulesList : inspirationList).map((item) => (
+                  <article key={item.title} className="p-comic-card">
+                    <div className="p-kicker">{item.num}</div>
+                    <h3>{item.title}</h3>
+                    <p style={{ margin: "0 0 16px", fontSize: "0.9rem", color: "var(--ink-muted)" }}>
+                      {item.body}
+                    </p>
+                    <div className="p-pill-list">
+                      {item.tags.map((t) => (
+                        <span key={t} className="p-pill">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
           {/* ── VENTURES, SOFTWARE & CREATIVE WORK ───────────────────── */}
           <section id="projects" className="p-section p-section-dark">
@@ -384,7 +448,7 @@ export default function App() {
                   </a>
                   <a className="p-social-row" href={social.tiktok} target="_blank" rel="noopener noreferrer">
                     <span>TIKTOK</span>
-                    <strong>@itsshaksar7 &rarr;</strong>
+                    <strong>@agentshak.exe &rarr;</strong>
                   </a>
                 </div>
               </div>
